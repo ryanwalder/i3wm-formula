@@ -25,7 +25,7 @@ Testing is done wit kitchen-salt
 ``kitchen converge``
 --------------------
 
-Runs the postgres main state
+Runs the formula
 
 ``kitchen verify``
 ------------------
