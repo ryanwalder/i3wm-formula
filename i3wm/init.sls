@@ -1,6 +1,6 @@
-{%- from 'i3/map.jinja' import i3 with context %}
+{%- from 'i3wm/map.jinja' import i3 with context %}
 
-i3:
+i3wm:
   {%- if salt.grains.get('osfullname') == 'Ubuntu' %}
   pkgrepo.managed:
     # TODO: Make more intelligent for different OS; if upstream:
@@ -10,7 +10,7 @@ i3:
     - keyid: 941C42E6
     - keyserver: keyserver.ubuntu.com
     - require_in:
-      - pkg: i3
+      - pkg: i3wm
   {%- endif %}
   pkg.latest:
     - pkgs:

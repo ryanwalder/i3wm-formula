@@ -1,0 +1,28 @@
+---
+driver:
+  name: vagrant
+
+platforms:
+  - name: ubuntu-14.04
+  - name: centos-7.1
+
+provisioner:
+  name: salt_solo
+  formula: i3wm
+  salt_copy_filter:
+    - .git
+    - .kitchen
+  pillars-from-files:
+    i3wm.sls: pillar.example.sls
+  pillars:
+    top.sls:
+      base:
+        '*':
+          - i3wm
+  state_top:
+    base:
+      '*':
+        - i3wm
+
+suites:
+  - name: default

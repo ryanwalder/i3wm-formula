@@ -1,7 +1,10 @@
 {% set i3 = salt['pillar.get']('i3', {
   'lookup': salt['grains.filter_by']({
     'Debian': {
-      'packages': ['i3-wm', 'i3lock', 'xorg'],
+      'packages': ['i3-wm', 'i3lock'],
+    },
+    'RedHat': {
+      'packages': ['i3', 'i3lock'],
     },
   }, default='Ubuntu', grain='os_family')
 }, merge=True)
