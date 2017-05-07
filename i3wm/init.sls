@@ -11,7 +11,7 @@ i3wm-repo:
     - name: sur5r-keyring
     - skip_verify: True
     - require_in:
-      - pkg: 13wm
+      - pkg: i3wm
   {%- endif %}
 
 i3wm:
